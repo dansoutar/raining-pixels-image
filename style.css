@@ -112,14 +112,59 @@ body {
 body {
   overflow: hidden;
   background: black;
+  perspective: 1000px;
 }
 
 #canvas1 {
-  border: 2px solid white;
+  /* border: 2px solid white; */
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 435px;
   height: 574px;
+  transform-style: preserve-3d;
+  transform:
+    translate(-50%, -50%)
+    scale(1.2)
+  ;
+}
+#canvas1:hover {
+  /* border: 2px solid white; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 435px;
+  height: 574px;
+  transform: 
+    translate(-50%, -50%)
+    scale(1.2)
+    ;
+  animation: animate 8s ease-in-out alternate infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: 
+      translate(-50%, -50%)
+      scale(1.2)
+      ;
+  }
+  50% {
+    transform: 
+      translate(-50%, -50%)
+      scale(1.2)
+      rotateY(20deg)
+      rotateX(10deg)
+      rotateZ(-10deg)
+      ;
+  }
+  100% {
+    transform: 
+      translate(-50%, -50%)
+      scale(1.5)
+      rotateY(-20deg)
+      rotateX(-10deg)
+      rotateZ(10deg)
+      ;
+  }
 }
